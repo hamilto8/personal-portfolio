@@ -1,8 +1,27 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(163, 215, 252);
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
   display: flex;
+  gap: 10px;
+  float: right;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
+}
+.container section {
+  margin: 0 auto;
 }
 
 .about {
@@ -22,11 +41,97 @@ body {
 .about-info ul {
   list-style-type: none;
 }
+.work-section {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+}
+
+.work-info {
+  background-color: white;
+  grid-column: 1 / -1;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-projects-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.project {
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+.project .project-screenshot {
+  height: 100px;
+  width: 100px;
+  justify-self: center;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.name-and-links {
+  background-color: green;
+  display: flex;
+}
+
+.contact-section {
+  display: grid;
+}
+
+.contact-section ul {
+  float: none;
+}
+
+.contact-info {
+  background-color: transparent;
+  color: white;
+}
+
+.email {
+  display: flex;
+  gap: 10px;
+}
+
+.phone {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-section ul {
+  color: black;
+}
+
+.contact-photo {
+  height: 250px;
+  width: 250px;
+  background-color: purple;
+  order: 2;
+}
 
 @media (min-width: 1000px) {
   .about {
     grid-template-columns: repeat(2, 1fr);
-    width: 50%;
+    width: 50vw;
+  }
+  .work-info {
+    width: 50vw;
+    margin: 0;
+  }
+  .work-info-heading {
+    grid-column: 1 / -1;
+  }
+  .work-projects-grid {
+    margin: 0;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 10px;
   }
   .about-info ul {
     position: absolute;
@@ -36,18 +141,32 @@ body {
     display: flex;
     gap: 20px;
   }
+
+  .contact-section {
+    width: 50vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px;
+  }
 }
 
 @media (max-width: 768px) {
   .about {
     grid-template-columns: 1fr;
     text-align: center;
+    width: 75vw;
   }
   .about-info ul {
     display: flex;
     gap: 20px;
     margin-right: 10px;
     float: right;
+  }
+  .contact-section {
+    width: 75vw;
+  }
+
+  .contact-photo {
+    order: 1;
   }
 }
 
